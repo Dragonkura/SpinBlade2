@@ -8,14 +8,20 @@ public class WeaponSpawner : MonoBehaviour
     public Action OnPooledObject;
     public Transform holder;
     [SerializeField] int startWeaponAmount = 10;
+    public int StartWeaponAmount
+    {
+        get { return startWeaponAmount; }
+        set { startWeaponAmount = value; }
+    }
+
     [SerializeField] float minRadius = 2f;
-    public Player controller;
+    public WeaponOwner controller;
 
     private void Awake()
     {
-        controller = transform.parent.gameObject.GetComponent<Player>();
-    }
-    private void Start()
+        controller = transform.parent.gameObject.GetComponent<WeaponOwner>();
+    }   
+    public void Init()
     {
         for (int i = 0; i < startWeaponAmount; i++)
         {

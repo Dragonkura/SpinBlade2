@@ -2,17 +2,13 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : WeaponOwner
 {
-    public List<RotatingWeapon> ownWeapons;
-    public float speed;
     public VariableJoystick variableJoystick;
     public Transform character;
-    public Rigidbody rb;
-    public WeaponSpawner weaponSpawner;
     public Action<Transform> OnPlayerMovement;
-
-    public virtual void Move()
+  
+    public override void Move()
     {
         Vector3 direction = (Vector3.forward * variableJoystick.Vertical + Vector3.right * variableJoystick.Horizontal).normalized;
         rb.velocity = direction * speed * Time.fixedDeltaTime;
@@ -30,18 +26,14 @@ public class Player : MonoBehaviour
     {
         if (weaponSpawner.GetOwnWeaponsAmount() == 0) Die();
     }
-    public virtual void AddWeaponToOwner(int amount)
-    {
-        if (weaponSpawner != null) weaponSpawner.SpawnWeapon(amount);
-    }
     public virtual void FixedUpdate()
     {
         Move();
     }
-    public virtual void Die()
+    public override void Die()
     {
         GameManager.instance.EndGame();
-        gameObject.SetActive(false);
         OnPlayerMovement = null;
+        base.Die();
     }
 }

@@ -10,8 +10,9 @@ public class Enemy : Player
     [SerializeField] float maxBoundY = 0f;
     private Coroutine _autoMoveCoroutine;
     private Vector3 direction;
-    private void Start()
+    public override void Start()
     {
+        base.Start();
         _autoMoveCoroutine = StartCoroutine(IAutoMove());
     }
     IEnumerator IAutoMove()

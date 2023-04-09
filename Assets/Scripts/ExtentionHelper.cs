@@ -3,7 +3,7 @@
 using UnityEngine;
 using Watermelon;
 
-public static class ExtensionHelper 
+public static class ExtentionHelper 
 {
     public static void SetRotation(this Transform me, Vector3 value)
     {
@@ -20,5 +20,11 @@ public static class ExtensionHelper
     {
         var pool = me.pools.Find(x => string.Equals(x.name, name));
         return pool;
+    }
+    public static void SetLocalPosFromAngelAndDistance(this Transform me, float angle, float distance)
+    {
+            var newPosX = distance * Mathf.Cos(angle);
+            var newPosZ = distance * Mathf.Sin(angle);
+            me.localPosition = new Vector3(newPosX, 0, newPosZ);
     }
 }

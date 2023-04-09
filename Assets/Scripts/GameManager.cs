@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public bool isGamePlaying;
     private void Awake()
     {
+        Screen.orientation = ScreenOrientation.LandscapeLeft;
         if (instance == null) instance = this;
         else DestroyImmediate(this);
         uiStart.gameObject.SetActive(true);

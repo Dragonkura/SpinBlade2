@@ -6,7 +6,7 @@ using UnityEngine;
 public class WeaponElement : MonoBehaviour
 {
     public Action onTriggerEnter;
-    public Player controller;
+    public WeaponOwner controller;
     public int idGroup;
     private void OnTriggerEnter(Collider other)
     {
@@ -23,7 +23,7 @@ public class WeaponElement : MonoBehaviour
             default:
                 break;
         }
-        if (controller != null) controller.CheckPlayerState();
+        if (controller != null) controller.CheckState();
     }
     [SerializeField] float forceStrength = 0.01f;
 

@@ -7,7 +7,7 @@ using UnityEngine;
 public class RotatingWeapon : MonoBehaviour
 {
     public Action OnDeactive;
-    public Player controller;
+    public WeaponOwner controller;
     public WeaponElement weaponElement;
     public void Init()
     {
