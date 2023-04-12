@@ -43,10 +43,17 @@ public class CollectableItem : MonoBehaviour
         {
             case ItemType.ItemWeapon:
                 var wp = other.GetComponent<WeaponElement>();
-                if (wp != null)
+                if((wp != null))
                 {
-                    wp.controller.AddWeaponToOwner(1);
-                    gameObject.SetActive(false);
+                    if (wp.controller.GetComponent<Player>() != null)
+                    {
+                        wp.controller.AddWeaponToOwner(1);
+                        gameObject.SetActive(false);
+                    }
+                    else
+                    {
+                        
+                    }
                 }
                 break;
             default:
@@ -61,9 +68,6 @@ public class CollectableItem : MonoBehaviour
 
     private void SetTrigger(bool setment)
     {
-        //_rb.useGravity = !setment;
-        //_rb.isKinematic = setment;
-        //_collider.isTrigger = setment;
         ableToTrigger = setment;
     }
 }

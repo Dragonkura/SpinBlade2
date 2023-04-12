@@ -16,24 +16,24 @@ MonoBehaviour:
   - waveTier: 0
     creeps:
     - creepType: 0
-      creepPrefab: {fileID: 959559931014269168, guid: cef7c93d4bdd4ca41b0b8b5ab9307331, type: 3}
+      creepPrefab: {fileID: 5052130900577487230, guid: 5e74f93bc336d3c42a7bab20da0f0fee, type: 3}
     - creepType: 0
-      creepPrefab: {fileID: 959559931014269168, guid: cef7c93d4bdd4ca41b0b8b5ab9307331, type: 3}
+      creepPrefab: {fileID: 5052130900577487230, guid: 5e74f93bc336d3c42a7bab20da0f0fee, type: 3}
     - creepType: 0
-      creepPrefab: {fileID: 959559931014269168, guid: cef7c93d4bdd4ca41b0b8b5ab9307331, type: 3}
+      creepPrefab: {fileID: 5052130900577487230, guid: 5e74f93bc336d3c42a7bab20da0f0fee, type: 3}
   - waveTier: 1
     creeps:
     - creepType: 0
-      creepPrefab: {fileID: 959559931014269168, guid: cef7c93d4bdd4ca41b0b8b5ab9307331, type: 3}
+      creepPrefab: {fileID: 5052130900577487230, guid: 5e74f93bc336d3c42a7bab20da0f0fee, type: 3}
     - creepType: 0
-      creepPrefab: {fileID: 959559931014269168, guid: cef7c93d4bdd4ca41b0b8b5ab9307331, type: 3}
+      creepPrefab: {fileID: 5052130900577487230, guid: 5e74f93bc336d3c42a7bab20da0f0fee, type: 3}
     - creepType: 1
-      creepPrefab: {fileID: 959559931014269168, guid: b249d2dcf8bbfdf4880b2a2cc7b65479, type: 3}
+      creepPrefab: {fileID: 5052130900577487230, guid: 5e74f93bc336d3c42a7bab20da0f0fee, type: 3}
   - waveTier: 2
     creeps:
     - creepType: 1
-      creepPrefab: {fileID: 959559931014269168, guid: b249d2dcf8bbfdf4880b2a2cc7b65479, type: 3}
+      creepPrefab: {fileID: 5052130900577487230, guid: 5e74f93bc336d3c42a7bab20da0f0fee, type: 3}
     - creepType: 1
-      creepPrefab: {fileID: 959559931014269168, guid: b249d2dcf8bbfdf4880b2a2cc7b65479, type: 3}
+      creepPrefab: {fileID: 5052130900577487230, guid: 5e74f93bc336d3c42a7bab20da0f0fee, type: 3}
     - creepType: 2
-      creepPrefab: {fileID: 959559931014269168, guid: 5e74f93bc336d3c42a7bab20da0f0fee, type: 3}
+      creepPrefab: {fileID: 5052130900577487230, guid: 5e74f93bc336d3c42a7bab20da0f0fee, type: 3}

@@ -39,6 +39,7 @@ public class WeaponSpawner : MonoBehaviour
             var obj = PoolManager.GetPoolByName(PoolNameConst.ROTATING_WEAPON).GetPooledObject(true);
             obj.transform.SetParent(holder);
             obj.GetComponent<RotatingWeapon>().controller = controller;
+            obj.gameObject.layer = controller.gameObject.layer;
             var wp = obj.GetComponent<RotatingWeapon>();
             wp.OnDeactive -= CaculateNewTranform;
             wp.OnDeactive += CaculateNewTranform;

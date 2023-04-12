@@ -4,6 +4,9 @@ public class Creep : WeaponOwner
 {
     public int weaponOwn;
     public CreepType creepType;
+    public bool isArgo = false;
+    public Transform target;
+    public Vector3 startPos;
     public override void Start()
     {
         switch (creepType)
@@ -23,10 +26,15 @@ public class Creep : WeaponOwner
         weaponSpawner.StartWeaponAmount = weaponOwn;
         base.Start();
     }
-    public void MoveToTarget(Transform target)
+    public void MoveToTarget(Vector3 target)
     {
-        var direction = (target.position - transform.position).normalized;
-        rb.velocity += direction * Time.fixedDeltaTime * speed;
+        if((target - transform.position).sqrMagnitude < 0.1f)
+        {
+            rb.velocity = Vector3.zero;
+            return;
+        }
+        var direction = (target - transform.position).normalized;
+        transform.position += direction * Time.fixedDeltaTime * speed;
     }
     public void Agro(GameObject target)
     {
@@ -38,6 +46,18 @@ public class Creep : WeaponOwner
     }
     public override void Move()
     {
+    }
+    private void FixedUpdate()
+    {
+        //if (!isArgo) return;
+        if (isArgo)
+        {
+            if(target != null) MoveToTarget(target.position);
+        }
+        else
+        {
+            MoveToTarget(startPos);
+        }
     }
 }
 public enum CreepType

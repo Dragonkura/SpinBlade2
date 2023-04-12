@@ -19,5 +19,5 @@ public class WaveConfig
 public class CreepConfig
 {
     public CreepType creepType;
-    public GameObject creepPrefab;
+    public Creep creepPrefab;
 }

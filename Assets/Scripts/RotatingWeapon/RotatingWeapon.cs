@@ -14,6 +14,7 @@ public class RotatingWeapon : MonoBehaviour
         if(weaponElement != null)
         {
             weaponElement.controller = controller;
+            weaponElement.gameObject.layer = controller.gameObject.layer;
             weaponElement.onTriggerEnter -= OnTrigger;
             weaponElement.onTriggerEnter += OnTrigger;
         }

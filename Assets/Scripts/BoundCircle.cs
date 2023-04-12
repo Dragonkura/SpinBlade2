@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,7 +11,8 @@ public class BoundCircle : MonoBehaviour
     public LineRenderer lineRenderer;
     private bool needToShrink = false;
     [SerializeField] float minRadius = 20f;
-    
+    public float delayTimeToShrink = 10f;
+    public float shrinkSpeed = 2;
     public void OnStartGame()
     {
         var players = GameObject.FindObjectsByType<Player>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
@@ -20,7 +22,10 @@ public class BoundCircle : MonoBehaviour
             p.OnPlayerMovement -= OnPlayerMoverment;
             p.OnPlayerMovement += OnPlayerMoverment;
         }
-        needToShrink = true;
+        DOVirtual.DelayedCall(delayTimeToShrink,() =>
+       {
+           needToShrink = true;
+       });
         radius = Radius;
         // Set the Line Renderer's width and material
         lineRenderer.startWidth = 0.1f;
@@ -73,7 +78,7 @@ public class BoundCircle : MonoBehaviour
     void Update()
     {
         if (!needToShrink) return;
-        radius -= 5 * Time.deltaTime;
+        radius -= shrinkSpeed * Time.deltaTime;
         if (radius <= minRadius) needToShrink = false;
         // Update the Line Renderer's positions every frame
         UpdatePositions();
